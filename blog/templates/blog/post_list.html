@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Gamewog</title>
-</head>
-<body>
-    <p>Merhaba!</p>
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-    <p>Çalışıyor!</p>
-
-</body>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.yayinlama_tarihi }}</p>
+        <h1><a href="">{{ post.baslik }}</a></h1>
+        <p>{{ post.yazi|linebreaks }}</p>
+    </div>
+{% endfor %}
+    </body>
 </html>
